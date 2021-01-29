@@ -1,4 +1,5 @@
-let mokal = document.querySelector('#mokal'), wisker = document.querySelector('#wiskerblooms')
+let mokal = document.querySelector('#mokal'), wisker = document.querySelector('#wiskerblooms'), select_all = document.querySelector('#selectall')
+const kitten_mult_n=[0.1,0.125,0.15,0.175,0.2,0.2,0.2,0.2,0.2,0.175,0.15,0.125,0.115,0.1,0.05]
 document.querySelector('#submit').onclick = function() {
     let milk_mult = 1,milk_progress = 1 ,cat_mult = 1
 
@@ -34,50 +35,8 @@ document.querySelector('#submit').onclick = function() {
         milk_mult*=1+document.querySelector('#garden_buff').value/100
     }
 
-    if (document.querySelector('#Kitten_helpers').checked) {
-        cat_mult*=(1+milk_progress*0.1*milk_mult)
-    }
-    if (document.querySelector('#Kitten_workers').checked) {
-        cat_mult*=(1+milk_progress*0.125*milk_mult)
-    }
-    if (document.querySelector('#Kitten_engineers').checked) {
-        cat_mult*=(1+milk_progress*0.15*milk_mult)
-    }
-    if (document.querySelector('#Kitten_overseers').checked) {
-        cat_mult*=(1+milk_progress*0.175*milk_mult)
-    }
-    if (document.querySelector('#Kitten_managers').checked) {
-        cat_mult*=(1+milk_progress*0.2*milk_mult)
-    }
-    if (document.querySelector('#Kitten_accountants').checked) {
-        cat_mult*=(1+milk_progress*0.2*milk_mult)
-    }
-    if (document.querySelector('#Kitten_specialists').checked) {
-        cat_mult*=(1+milk_progress*0.2*milk_mult)
-    }
-    if (document.querySelector('#Kitten_experts').checked) {
-        cat_mult*=(1+milk_progress*0.2*milk_mult)
-    }
-    if (document.querySelector('#Kitten_consultants').checked) {
-        cat_mult*=(1+milk_progress*0.2*milk_mult)
-    }
-    if (document.querySelector('#Kitten_assistants').checked) {
-        cat_mult*=(1+milk_progress*0.175*milk_mult)
-    }
-    if (document.querySelector('#Kitten_marketeers').checked) {
-        cat_mult*=(1+milk_progress*0.15*milk_mult)
-    }
-    if (document.querySelector('#Kitten_analystss').checked) {
-        cat_mult*=(1+milk_progress*0.125*milk_mult)
-    }
-    if (document.querySelector('#Kitten_executives').checked) {
-        cat_mult*=(1+milk_progress*0.115*milk_mult)
-    }
-    if (document.querySelector('#Kitten_angels').checked) {
-        cat_mult*=(1+milk_progress*0.1*milk_mult)
-    }
-    if (document.querySelector('#Kitten_fortune').checked) {
-        cat_mult*=(1+milk_progress*0.05*milk_mult)
+    for (let i of kitten_mult_n) {
+        cat_mult*=(1+milk_progress*milk_mult*i)
     }
 
     document.querySelector('#kitten_bonus').innerHTML= `x${(Math.round(cat_mult*1000)/1000).toLocaleString('ru')} or +${(Math.round((cat_mult-1)*100000)/1000).toLocaleString('ru')}%`
@@ -96,5 +55,24 @@ wisker.onclick = function() {
     } else {
         document.querySelector('#garden').classList.add('hidden')
         
+    }
+}
+wisker.onclick = function() {
+    if (wisker.checked) {
+    document.querySelector('#garden').classList.remove('hidden')
+    } else {
+        document.querySelector('#garden').classList.add('hidden')
+        
+    }
+}
+select_all.onclick = function() {
+    if (select_all.checked) {
+        for (i in kitten_mult_n) {
+            document.querySelector(`#k${+i+1}`).checked = true
+        }
+    } else {
+        for (i in kitten_mult_n) {
+            document.querySelector(`#k${+i+1}`).checked = false
+        }
     }
 }

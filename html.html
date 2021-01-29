@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat mult counter</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>Cookie clicker kitten multiplier counter</h1>
+    <b>Number of achievements:</b><br>
+    <input type="text" id="achievements" value=""><br><br>
+    <b>Upgrades:</b><br>
+    <label>
+    <input type="checkbox" id="santamilk">Santa's milk and cookies<br>
+    </label>
+    <b>Dragon auras:</b><br>
+    <label>
+    <input type="checkbox" id="breathmilk">Breath of milk
+    </label>
+    <label>
+    <input type="checkbox" id="realitybend">Reality Bending<br>
+    </label>    
+    <b>Pantheon gods:</b><br>
+    <label>
+    <input type="checkbox" id="mokal">Mokalsium<br>
+    </label>
+    <div class="hidden" id="slots">
+        <br><b>Mokalsium slot:</b><br>
+        <label><input type="radio"  name="slot" id="first_slot">Diamond</label>
+        <label><input type="radio" name="slot" id="second_slot">Ruby</label>
+        <label><input type="radio" name="slot" id="third_slot">Jade<br><br></label>
+    </div>
+    <b>Garden:</b><br>
+    <label><input type="checkbox" id="wiskerblooms">Do you have wiskerblooms in the garden?<br></label>
+    <div id="garden" class="hidden">
+        <br><b>Your garden milk bonus (Percents)(Check in garden informations):</b><br>
+        <input type="text" id="garden_buff" value=""><br>
+    </div>
+    <div class="kittens">
+        <br><b>Kittens you have:</b><br>
+        <label><input type="checkbox" id="Kitten_helpers">Kitten helpers<br></label>
+        <label><input type="checkbox" id="Kitten_workers">Kitten workers<br></label>
+        <label><input type="checkbox" id="Kitten_engineers">Kitten engineers<br></label>
+        <label><input type="checkbox" id="Kitten_overseers">Kitten overseers<br></label>
+        <label><input type="checkbox" id="Kitten_managers">Kitten managers<br></label>
+        <label><input type="checkbox" id="Kitten_accountants">Kitten accountants<br></label>
+        <label><input type="checkbox" id="Kitten_specialists">Kitten specialists<br></label>
+        <label><input type="checkbox" id="Kitten_experts">Kitten experts<br></label>
+        <label><input type="checkbox" id="Kitten_consultants">Kitten consultants<br></label>
+        <label><input type="checkbox" id="Kitten_assistants">Kitten assistants to the regional manager<br></label>
+        <label><input type="checkbox" id="Kitten_marketeers">Kitten marketeers<br></label>
+        <label><input type="checkbox" id="Kitten_analystss">Kitten analysts<br></label>
+        <label><input type="checkbox" id="Kitten_executives">Kitten executives<br></label>
+        <label><input type="checkbox" id="Kitten_angels">Kitten angels<br></label>
+        <label><input type="checkbox" id="Kitten_fortune">Kitten Fortune #103<br></label>
+    </div>
+    <br><br><button id="submit">Submit</button>
+    <h2>Kitten multiplier bonus:</h2>
+    <h3 id="kitten_bonus"></h3>
+    <script src="main.js"></script>
+
+</body>
+</html>

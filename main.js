@@ -35,8 +35,10 @@ document.querySelector('#submit').onclick = function() {
         milk_mult*=1+document.querySelector('#garden_buff').value/100
     }
 
-    for (let i of kitten_mult_n) {
-        cat_mult*=(1+milk_progress*milk_mult*i)
+    for (let i in kitten_mult_n) {
+        if (document.querySelector(`#k${+i+1}`).checked) {
+            cat_mult*=(1+milk_progress*milk_mult*kitten_mult_n[i])
+        }
     }
 
     document.querySelector('#kitten_bonus').innerHTML= `x${(Math.round(cat_mult*1000)/1000).toLocaleString('ru')} or +${(Math.round((cat_mult-1)*100000)/1000).toLocaleString('ru')}%`

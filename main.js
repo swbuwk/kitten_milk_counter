@@ -59,14 +59,7 @@ wisker.onclick = function() {
         
     }
 }
-wisker.onclick = function() {
-    if (wisker.checked) {
-    document.querySelector('#garden').classList.remove('hidden')
-    } else {
-        document.querySelector('#garden').classList.add('hidden')
-        
-    }
-}
+
 select_all.onclick = function() {
     if (select_all.checked) {
         for (i in kitten_mult_n) {
